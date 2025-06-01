@@ -1,0 +1,172 @@
+// ---------------------------------------------------------
+// CommonButton.scss
+// ---------------------------------------------------------
+//
+// Define CSS variables for colors.
+// You can override these at a higher level if needed.
+//
+// Primary button colors:
+//   --kendo-button-primary           : #87B668
+//   --kendo-button-primary-hover     : #70A84C
+//   --kendo-white-bg                 : #ffffff
+//
+// Secondary button colors:
+//   --kendo-button-secondary         : #656565
+//   --kendo-button-secondary-hover   : #202020
+//   --kendo-button-secondary-disabled-border: #EAE6E6
+//   --kendo-button-secondary-disabled       : #A4A4A4
+//
+// ---------------------------------------------------------
+
+:root {
+  /* Primary */
+  --kendo-button-primary: #87B668;
+  --kendo-button-primary-hover: #70A84C;
+  --kendo-white-bg: #ffffff;
+
+  /* Secondary */
+  --kendo-button-secondary: #656565;
+  --kendo-button-secondary-hover: #202020;
+  --kendo-button-secondary-disabled-border: #EAE6E6;
+  --kendo-button-secondary-disabled: #A4A4A4;
+}
+
+/* ---------------------------------------------------------
+   Base “common-button” class
+   --------------------------------------------------------- */
+.common-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  min-width: 100px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: Objectivity, sans-serif;
+  font-weight: 500;
+  line-height: 100%;
+  outline: 0;
+  box-shadow: none;
+  text-decoration: none;
+
+  /* By default, unstyled. Each fill/theme combo adds its own rules. */
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.loading {
+    pointer-events: none;
+    opacity: 0.85;
+  }
+
+  /* Flex layout for startIcon + children text */
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 6px;
+    svg,
+    i {
+      font-size: 16px; // adjust if using font-icon
+    }
+  }
+}
+
+/* ---------------------------------------------------------
+   PRIMARY — CONTAINED
+   --------------------------------------------------------- */
+.primary.contained {
+  color: var(--kendo-white-bg);
+  background-color: var(--kendo-button-primary);
+  border: 1px solid var(--kendo-button-primary);
+
+  &:hover,
+  &:focus {
+    background-color: var(--kendo-button-primary-hover);
+    border-color: var(--kendo-button-primary-hover);
+    color: var(--kendo-white-bg);
+  }
+
+  &:disabled {
+    /* half-opacity background by using rgba(135,182,104,0.5) */
+    background-color: rgba(135, 182, 104, 0.5);
+    border-color: var(--kendo-button-primary);
+    color: var(--kendo-white-bg);
+    cursor: not-allowed;
+  }
+}
+
+/* ---------------------------------------------------------
+   PRIMARY — OUTLINED
+   (i.e. “contained” = solid, “outlined” = ghost with white bg)
+   --------------------------------------------------------- */
+.primary.outlined {
+  color: var(--kendo-button-primary);
+  background-color: var(--kendo-white-bg);
+  border: 1px solid var(--kendo-button-primary);
+
+  &:hover,
+  &:focus {
+    color: var(--kendo-button-primary-hover);
+    border-color: var(--kendo-button-primary-hover);
+    background-color: var(--kendo-white-bg);
+  }
+
+  &:disabled {
+    color: var(--kendo-button-primary);
+    border-color: var(--kendo-button-primary);
+    background-color: var(--kendo-white-bg);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+/* ---------------------------------------------------------
+   SECONDARY — CONTAINED
+   --------------------------------------------------------- */
+.secondary.contained {
+  color: var(--kendo-white-bg);
+  background-color: var(--kendo-button-secondary);
+  border: 1px solid var(--kendo-button-secondary);
+
+  &:hover,
+  &:focus {
+    background-color: var(--kendo-button-secondary-hover);
+    border-color: var(--kendo-button-secondary-hover);
+    color: var(--kendo-white-bg);
+  }
+
+  &:disabled {
+    background-color: var(--kendo-button-secondary-disabled);
+    border-color: var(--kendo-button-secondary-disabled-border);
+    color: var(--kendo-white-bg);
+    cursor: not-allowed;
+  }
+}
+
+/* ---------------------------------------------------------
+   SECONDARY — OUTLINED
+   --------------------------------------------------------- */
+.secondary.outlined {
+  color: var(--kendo-button-secondary);
+  background-color: var(--kendo-white-bg);
+  border: 1px solid var(--kendo-button-secondary);
+
+  &:hover,
+  &:focus {
+    color: var(--kendo-button-secondary-hover);
+    border-color: var(--kendo-button-secondary-hover);
+    background-color: var(--kendo-white-bg);
+  }
+
+  &:disabled {
+    color: var(--kendo-button-secondary-disabled);
+    border-color: var(--kendo-button-secondary-disabled-border);
+    background-color: var(--kendo-white-bg);
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
+}
